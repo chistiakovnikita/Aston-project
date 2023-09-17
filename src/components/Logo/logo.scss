@@ -1,0 +1,21 @@
+
+
+.logo {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+    &__title {
+        font-size: 25px;
+        font-weight: 600;
+        color: black;
+        transition: opacity 0.3s linear;
+    }
+    &:hover .logo__title {
+        opacity: 0.3;
+    }
+
+    &__img {
+        width: 150px;
+    }
+}

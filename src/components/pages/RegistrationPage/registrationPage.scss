@@ -1,0 +1,48 @@
+@import '../../../scss/variables.scss';
+
+.registration {
+    max-width: 300px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 25px;
+    }
+
+    &__icon {
+        font-size: 70px;
+        color: $form-color;
+        margin-bottom: 30px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        border-bottom: 2px solid $form-color;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    &__btn {
+        font-size: 20px;
+        background: $btn-color;
+        color: white;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        padding: 8px 0;
+        transition: opacity 0.3s linear;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

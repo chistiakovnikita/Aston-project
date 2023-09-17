@@ -1,6 +1,11 @@
 @import './reset.scss';
+@import './variables.scss';
+@import './common.scss';
 
 body {
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
         'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    color: black;
+    background-color: $bg-color;
 }
