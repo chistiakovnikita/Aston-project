@@ -1,10 +1,25 @@
 import './scss/App.scss'
+import Header from './components/Header'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './components/pages/HomePage'
+import RegistrationPage from './components/pages/RegistrationPage'
+import LoginPage from './components/pages/LoginPage'
 
 function App() {
     return (
-        <div className="App">
-            <h1>Hello</h1>
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route
+                        path="/auth/registration"
+                        element={<RegistrationPage />}
+                    />
+                    <Route path="/auth/login" element={<LoginPage />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
     )
 }
 

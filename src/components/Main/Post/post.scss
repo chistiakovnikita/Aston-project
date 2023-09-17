@@ -1,0 +1,91 @@
+@import '../../../scss/variables.scss';
+
+.post {
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: justify;
+    margin-bottom: 50px;
+
+    &__header {
+        background: $bgPost-color;
+        text-align: center;
+        padding-top: 30px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    &__title {
+        padding: 0 20px;
+        font-size: 30px;
+        font-weight: 600;
+        color: $bg-color;
+        margin-bottom: 30px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 15px;
+        background: white;
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    &__avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: green;
+    }
+
+    &__username {
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    &__text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__tags {
+        font-weight: 600;
+        color: $tag-color;
+        margin-bottom: 20px;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 600;
+    }
+
+    &__qty-views {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__qty-messages {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .icom-message {
+            font-size: 25px;
+        }
+    }
+}
