@@ -12,6 +12,7 @@ const HomePage = () => {
                         <Post />
                         <Post />
                         <Post />
+                        <Post />
                     </section>
                     <aside className="sidebar">
                         <div className="commercial">
