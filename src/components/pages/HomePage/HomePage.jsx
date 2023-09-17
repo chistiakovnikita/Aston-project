@@ -11,7 +11,6 @@ const HomePage = () => {
                     <section className="section">
                         <Post />
                         <Post />
-                        <Post />
                     </section>
                     <aside className="sidebar">
                         <div className="commercial">
