@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useCallback } from 'react'
+import { useEffect } from 'react'
 import { fetchPosts } from '../../../redux/slices/postsSlice'
 import Post from '../../Main/Post'
 import Skeleton from '../../Main/Skeleton'
@@ -11,13 +11,10 @@ const HomePage = () => {
     const { posts, status } = useSelector((state) => state.postsSlice)
     const dispatch = useDispatch()
 
-    const getPosts = useCallback(async () => {
+    useEffect(() => {
         dispatch(fetchPosts())
     }, [dispatch])
 
-    useEffect(() => {
-        getPosts()
-    }, [getPosts])
     return (
         <main className="main">
             <div className="container">
