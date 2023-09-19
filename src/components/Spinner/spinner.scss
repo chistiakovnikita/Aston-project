@@ -1,0 +1,32 @@
+.spinner {
+    text-align: center;
+    margin-top: 20px;
+
+    &__animation {
+        display: inline-block;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        border-top: 3px solid rgba(0, 0, 0, 0.1);
+        border-right: 3px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+        border-left: 3px solid rgb(137, 149, 162);
+        animation: loading-spinner 2s infinite linear;
+    }
+
+    &__text {
+        display: block;
+        margin-top: 5px;
+        color: rgb(137, 149, 162);
+        font-size: 18px;
+    }
+}
+
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

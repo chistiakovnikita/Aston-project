@@ -1,17 +1,42 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useCallback } from 'react'
+import { fetchPosts } from '../../../redux/slices/postsSlice'
 import Post from '../../Main/Post'
+import Skeleton from '../../Main/Skeleton'
 import commercial1 from '../../../assets/img/commercial/porshe.jpg'
 import commercial2 from '../../../assets/img/commercial/avtook.png'
 import commercial3 from '../../../assets/img/commercial/bentley.jpg'
 
 const HomePage = () => {
+    const { posts, status } = useSelector((state) => state.postsSlice)
+    const dispatch = useDispatch()
+
+    const getPosts = useCallback(async () => {
+        dispatch(fetchPosts())
+    }, [dispatch])
+
+    useEffect(() => {
+        getPosts()
+    }, [getPosts])
     return (
         <main className="main">
             <div className="container">
                 <div className="main__inner">
                     <section className="section">
-                        <Post />
-                        <Post />
-                        <Post />
+                        {status === 'error' ? (
+                            <h2>
+                                Что-то пошло не так. Попробуйте перезагрузить
+                                страницу и проверьте подключение к интернету.
+                            </h2>
+                        ) : status === 'loading' ? (
+                            [...new Array(2)].map((_, idx) => (
+                                <Skeleton key={idx} />
+                            ))
+                        ) : (
+                            posts.map((post) => (
+                                <Post key={post._id} post={post} />
+                            ))
+                        )}
                     </section>
                     <aside className="sidebar">
                         <div className="commercial">
