@@ -1,0 +1,16 @@
+@import '../../../scss/variables.scss';
+
+.input-name {
+    &__input {
+        width: 100%;
+        border-bottom: 2px solid $form-color;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    &__error {
+        font-size: 14px;
+        color: red;
+        text-align: left;
+    }
+}
