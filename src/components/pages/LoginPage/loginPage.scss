@@ -13,34 +13,4 @@
         font-weight: 600;
         font-size: 25px;
     }
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__email {
-        border-bottom: 2px solid $form-color;
-        margin-bottom: 30px;
-        font-size: 18px;
-    }
-    &__password {
-        border-bottom: 2px solid $form-color;
-        margin-bottom: 50px;
-        font-size: 18px;
-    }
-
-    &__btn {
-        font-size: 20px;
-        background: $btn-color;
-        color: white;
-        letter-spacing: 1px;
-        border-radius: 10px;
-        padding: 8px 0;
-        transition: opacity 0.3s linear;
-
-        &:hover {
-            opacity: 0.7;
-        }
-    }
 }

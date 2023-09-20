@@ -32,6 +32,35 @@
     &__logo {
         text-decoration: none;
     }
+
+    &__btn-logout {
+        font-weight: 600;
+        color: white;
+        transition: opacity 0.3s linear;
+        background: $btn-color;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        background: #d60d0d;
+
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+    &__btn-create {
+        font-weight: 600;
+        color: white;
+        transition: opacity 0.3s linear;
+        background: $btn-color;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        background: green;
+
+        &:hover {
+            opacity: 0.3;
+        }
+    }
 }
 //MAIN
 
