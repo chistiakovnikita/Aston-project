@@ -4,6 +4,7 @@ import Logo from '../Logo'
 import { logout, setStatus } from '../../redux/slices/authSlice'
 import { STATUS } from '../../redux/slices/authSlice'
 import './header.scss'
+import SearchForm from '../Forms/SearchForm'
 
 const Header = () => {
     const { authLogin } = useSelector((state) => state.authSlice)
@@ -22,6 +23,7 @@ const Header = () => {
                     <Link className="header__logo" to={'/'}>
                         <Logo />
                     </Link>
+                    <SearchForm />
                     {authLogin ? (
                         <div className="header__links">
                             <button className="header__btn-create">
