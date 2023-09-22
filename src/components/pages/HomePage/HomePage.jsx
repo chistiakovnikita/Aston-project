@@ -9,8 +9,11 @@ import commercial3 from '../../../assets/img/commercial/bentley.jpg'
 
 const HomePage = () => {
     const { posts, status } = useSelector((state) => state.postsSlice)
+    const { foundPost, foundPostStatus } = useSelector(
+        (state) => state.searchSlice
+    )
+    console.log(foundPost)
     const dispatch = useDispatch()
-
     useEffect(() => {
         dispatch(fetchPosts())
     }, [dispatch])
@@ -20,7 +23,15 @@ const HomePage = () => {
             <div className="container">
                 <div className="main__inner">
                     <section className="section">
-                        {status === 'error' ? (
+                        {foundPostStatus === 'error' ? (
+                            <div>
+                                <p>По данному запросу постов не найдено</p>
+                            </div>
+                        ) : foundPost.length > 0 ? (
+                            foundPost.map((post) => (
+                                <Post key={post._id} post={post} />
+                            ))
+                        ) : status === 'error' ? (
                             <h2>
                                 Что-то пошло не так. Попробуйте перезагрузить
                                 страницу и проверьте подключение к интернету.
