@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'https://auto-news-5a3ae.web.app',
+    baseURL: 'http://localhost:5555',
 })
 
 instance.interceptors.request.use((config) => {

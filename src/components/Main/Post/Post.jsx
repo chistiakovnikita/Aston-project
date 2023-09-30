@@ -21,7 +21,7 @@ const Post = ({ post, isVisible }) => {
                     <h1 className="post__title">{post.title}</h1>
                     <img
                         className="post__img"
-                        src={`https://auto-news-5a3ae.web.app${post.image}`}
+                        src={`http://localhost:5555${post.image}`}
                         alt="pic"
                     ></img>
                 </Link>

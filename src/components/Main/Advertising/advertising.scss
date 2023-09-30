@@ -1,0 +1,23 @@
+@import '../../../scss/variables.scss';
+
+.advertising {
+    margin-bottom: 50px;
+    background: white;
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    &__info {
+        padding: 10px;
+        text-align: left;
+        line-height: 25px;
+    }
+
+    &__info-title {
+        font-weight: 600;
+    }
+}

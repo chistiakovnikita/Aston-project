@@ -70,7 +70,7 @@ const CreatePostForm = () => {
                 {image && (
                     <img
                         className="create-post-form__image"
-                        src={`https://auto-news-5a3ae.web.app${image}`}
+                        src={`http://localhost:5555${image}`}
                         alt="pic"
                     ></img>
                 )}
