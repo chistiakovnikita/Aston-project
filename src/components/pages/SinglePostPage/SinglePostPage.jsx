@@ -30,17 +30,21 @@ const SinglePostPage = () => {
 
                         <img
                             className="single-post__img"
-                            src={post.image}
+                            src={`http://localhost:5555${post.image}`}
                             alt="pic"
                         ></img>
                     </div>
                     <div className="single-post__content">
                         <div className="post__author">
-                            <img
-                                className="single-post__avatar"
-                                src={post.author.avatar}
-                                alt="pic"
-                            ></img>
+                            {post.author.avatar ? (
+                                <img
+                                    className="post__avatar"
+                                    src={post.author.avatar}
+                                    alt="pic"
+                                ></img>
+                            ) : (
+                                ''
+                            )}
 
                             <span className="single-post__username">
                                 {post.author.username}

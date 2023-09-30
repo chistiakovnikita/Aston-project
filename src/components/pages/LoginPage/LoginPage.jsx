@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { Navigate } from 'react-router-dom'
 import { fetchAuthLogin } from '../../../redux/slices/authSlice'
-
+import Form from '../../Forms/AuthForm'
 import './loginPage.scss'
-import Form from '../../Forms/Form'
 
 const LoginPage = () => {
     const dispatch = useDispatch()

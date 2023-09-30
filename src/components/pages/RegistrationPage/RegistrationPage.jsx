@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { Navigate } from 'react-router-dom'
 import { fetchAuthRegistration } from '../../../redux/slices/authSlice'
 import { RxAvatar } from 'react-icons/rx'
-import Form from '../../Forms/Form'
+import Form from '../../Forms/AuthForm'
 import InputName from '../../Forms/InputName'
 
 import './registrationPage.scss'
