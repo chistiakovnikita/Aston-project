@@ -12,6 +12,7 @@ const RegistrationPage = lazy(() =>
 )
 const LoginPage = lazy(() => import('./components/pages/LoginPage'))
 const SinglePostPage = lazy(() => import('./components/pages/SinglePostPage'))
+const CreatePostPage = lazy(() => import('./components/pages/CreatePostPage'))
 
 function App() {
     const dispatch = useDispatch()
@@ -33,6 +34,10 @@ function App() {
                         />
                         <Route path="/auth/login" element={<LoginPage />} />
                         <Route path="/posts/:id" element={<SinglePostPage />} />
+                        <Route
+                            path="/create-post"
+                            element={<CreatePostPage />}
+                        />
                     </Routes>
                 </Suspense>
             </div>

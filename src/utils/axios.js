@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'https://server-bet9.vercel.app',
+    baseURL: 'https://auto-news-5a3ae.web.app',
 })
 
 instance.interceptors.request.use((config) => {

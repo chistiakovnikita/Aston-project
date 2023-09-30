@@ -26,9 +26,12 @@ const Header = () => {
                     <SearchForm />
                     {authLogin ? (
                         <div className="header__links">
-                            <button className="header__btn-create">
+                            <Link
+                                to={'/create-post'}
+                                className="header__btn-create"
+                            >
                                 Создать пост
-                            </button>
+                            </Link>
                             <button
                                 onClick={onClickLogout}
                                 className=" header__btn-logout"

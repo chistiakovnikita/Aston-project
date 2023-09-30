@@ -11,10 +11,13 @@ import commercial3 from '../../../assets/img/commercial/bentley.jpg'
 
 const HomePage = () => {
     const { posts, status } = useSelector((state) => state.postsSlice)
+    const { authLogin } = useSelector((state) => state.authSlice)
     const { foundPost, foundPostStatus } = useSelector(
         (state) => state.searchSlice
     )
-    console.log(foundPost)
+
+    console.log(posts)
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchPosts())
@@ -46,7 +49,14 @@ const HomePage = () => {
                                 ))
                             ) : (
                                 posts.map((post) => (
-                                    <Post key={post._id} post={post} />
+                                    <Post
+                                        key={post._id}
+                                        post={post}
+                                        isVisible={
+                                            authLogin?.user._id ===
+                                            post.author._id
+                                        }
+                                    />
                                 ))
                             )}
                         </ErrorBoundary>

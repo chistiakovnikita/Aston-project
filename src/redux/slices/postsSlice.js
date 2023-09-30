@@ -6,6 +6,19 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
     return response.data
 })
 
+export const fetchCreatePost = createAsyncThunk(
+    'posts/fetchCreatePosts',
+    async (data) => {
+        const response = await axios.post('/posts', data)
+        return response.data
+    }
+)
+
+export const fetchRemovePost = createAsyncThunk(
+    'posts/fetchRemovePost',
+    async (id) => axios.delete(`/posts/${id}`)
+)
+
 const STATUS = {
     LOADING: 'loading',
     SUCCESS: 'success',
@@ -34,6 +47,12 @@ const postsSlice = createSlice({
             .addCase(fetchPosts.rejected, (state) => {
                 state.status = STATUS.ERROR
                 state.posts = []
+            })
+
+            .addCase(fetchRemovePost.fulfilled, (state, action) => {
+                state.posts = state.posts.filter(
+                    (item) => item._id !== action.meta.arg
+                )
             })
     },
 })

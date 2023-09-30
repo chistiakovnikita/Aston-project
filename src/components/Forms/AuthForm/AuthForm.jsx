@@ -1,9 +1,9 @@
 import React from 'react'
 import InputEmail from '../InputEmail'
 import InputPassword from '../InputPassword'
-import './form.scss'
+import './authForm.scss'
 
-const Form = (props) => {
+const AuthForm = (props) => {
     const {
         handleSubmit,
         submitHandler,
@@ -26,4 +26,4 @@ const Form = (props) => {
     )
 }
 
-export default Form
+export default AuthForm
