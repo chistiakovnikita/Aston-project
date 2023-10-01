@@ -13,6 +13,13 @@ export const fetchCreatePost = createAsyncThunk(
         return response.data
     }
 )
+export const fetchSinglePost = createAsyncThunk(
+    'posts/fetchSinglePost',
+    async (id) => {
+        const response = await axios.get(`/posts/${id}`)
+        return response.data
+    }
+)
 
 export const fetchRemovePost = createAsyncThunk(
     'posts/fetchRemovePost',
@@ -28,6 +35,8 @@ const STATUS = {
 const initialState = {
     posts: [],
     status: STATUS.LOADING,
+    singlePost: {},
+    singlePostStatus: STATUS.LOADING,
 }
 
 const postsSlice = createSlice({
@@ -53,6 +62,20 @@ const postsSlice = createSlice({
                 state.posts = state.posts.filter(
                     (item) => item._id !== action.meta.arg
                 )
+            })
+
+            .addCase(fetchSinglePost.pending, (state) => {
+                state.singlePostStatus = STATUS.LOADING
+                state.singlePost = {}
+            })
+            .addCase(fetchSinglePost.fulfilled, (state, action) => {
+                state.singlePost = action.payload
+                state.singlePostStatus = STATUS.SUCCESS
+            })
+
+            .addCase(fetchSinglePost.rejected, (state) => {
+                state.singlePostStatus = STATUS.ERROR
+                state.singlePost = {}
             })
     },
 })

@@ -21,7 +21,7 @@ const Post = ({ post, isVisible }) => {
                     <h1 className="post__title">{post.title}</h1>
                     <img
                         className="post__img"
-                        src={`http://localhost:5555${post.image}`}
+                        src={`https://server-mqrx.vercel.app${post.image}`}
                         alt="pic"
                     ></img>
                 </Link>

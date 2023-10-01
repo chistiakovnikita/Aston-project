@@ -15,7 +15,6 @@ const HomePage = () => {
     const { advertising, advertisingStatus } = useSelector(
         (state) => state.advertisingSlice
     )
-    console.log(advertising)
     const { authLogin } = useSelector((state) => state.authSlice)
     const { foundPost, foundPostStatus } = useSelector(
         (state) => state.searchSlice

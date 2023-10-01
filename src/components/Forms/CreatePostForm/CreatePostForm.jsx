@@ -33,6 +33,7 @@ const CreatePostForm = () => {
         evt.preventDefault()
         const formData = new FormData()
         const file = inputfile[0]
+        console.log(file)
         formData.append('image', file)
         const response = await axios.post('/upload', formData)
         setImage(response.data.url)
@@ -70,7 +71,7 @@ const CreatePostForm = () => {
                 {image && (
                     <img
                         className="create-post-form__image"
-                        src={`http://localhost:5555${image}`}
+                        src={`https://server-mqrx.vercel.app${image}`}
                         alt="pic"
                     ></img>
                 )}
