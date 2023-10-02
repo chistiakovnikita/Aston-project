@@ -88,7 +88,6 @@ const CreatePostForm = () => {
             <button
                 disabled={!isValid}
                 type="submit"
-                // onClick={handleSubmit(submitFormHandler)}
                 className="create-post-form__submit"
             >
                 Создать пост

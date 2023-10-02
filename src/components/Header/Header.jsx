@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Logo from '../Logo'
 import { logout, setStatus } from '../../redux/slices/authSlice'
 import { STATUS } from '../../redux/slices/authSlice'
-import './header.scss'
 import SearchForm from '../Forms/SearchForm'
+import './header.scss'
 
 const Header = () => {
     const { authLogin } = useSelector((state) => state.authSlice)
